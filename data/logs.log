@@ -1,0 +1,37 @@
+2022-08-29 14:33:41,317 | WARNING | app.py:18 | BOT WAS STARTED
+2022-08-29 14:33:43,654 | ERROR | errors.py:15 | Exception: '>=' not supported between instances of 'float' and 'str'
+Data: {"update_id":754915794,"message":{"message_id":2854,"from":{"id":1486516424,"is_bot":false,"first_name":"ALEGOR","last_name":"[work]","username":"alegorlzt","language_code":"ru","is_premium":true},"chat":{"id":1486516424,"first_name":"ALEGOR","last_name":"[work]","username":"alegorlzt","type":"private"},"date":1661772824,"text":"\/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+Traceback (most recent call last):
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 214, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\middlewares.py", line 50, in trigger
+    await app.trigger(action, args)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\middlewares.py", line 103, in trigger
+    await handler(*args)
+  File "c:\Users\ALEGOR\Desktop\simple-bot\middlewares\throttling.py", line 30, in on_process_message
+    await dispatcher.throttle(key, rate=limit)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\utils\deprecated.py", line 122, in wrapped
+    return await func(*args, **kwargs)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\utils\deprecated.py", line 122, in wrapped
+    return await func(*args, **kwargs)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 1056, in throttle
+    result = delta >= rate or delta <= 0
+TypeError: '>=' not supported between instances of 'float' and 'str'
+2022-08-29 14:34:00,932 | WARNING | app.py:18 | BOT WAS STARTED
+2022-08-29 14:34:24,205 | WARNING | app.py:18 | BOT WAS STARTED
+2022-08-29 14:34:44,161 | ERROR | errors.py:15 | Exception: no such column: user_login
+Data: {"update_id":754915806,"message":{"message_id":2875,"from":{"id":1486516424,"is_bot":false,"first_name":"ALEGOR","last_name":"[work]","username":"alegorlzt","language_code":"ru","is_premium":true},"chat":{"id":1486516424,"first_name":"ALEGOR","last_name":"[work]","username":"alegorlzt","type":"private"},"date":1661772884,"text":"@alegorlzt","entities":[{"offset":0,"length":10,"type":"mention"}]}}
+Traceback (most recent call last):
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 214, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "C:\Users\ALEGOR\AppData\Local\Programs\Python\Python39\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\ALEGOR\Desktop\simple-bot\handlers\admin_functions.py", line 69, in admin_find_user
+    user = get_user(user_login=find_user.lower())
+  File "c:\Users\ALEGOR\Desktop\simple-bot\services\database.py", line 76, in get_user
+    return con.execute(sql, parameters).fetchone()
+sqlite3.OperationalError: no such column: user_login
+2022-08-29 14:35:10,458 | WARNING | app.py:18 | BOT WAS STARTED
+2022-08-29 14:35:22,052 | CRITICAL | other.py:21 | BOT WAS RESTARTED BY ADMIN 1486516424
