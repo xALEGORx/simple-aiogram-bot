@@ -1,0 +1,3 @@
+settings.ini
+*__pycache__
+/data/*.log
